@@ -48,8 +48,3 @@ select * from transacciones where tipo!='C'
 select * from transacciones where monto between money(200) and money(2000)
 
 select codigo,monto,tipo,fecha from transacciones where fecha!=null
-
-update transacciones set tipo='T'
-where monto>money(100) and monto<money(500) 
-and fecha between '2025-09-01' and '2025-09-30' 
-and hora between '14:00' and '20:00'

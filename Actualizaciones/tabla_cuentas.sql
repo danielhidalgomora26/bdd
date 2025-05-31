@@ -47,6 +47,4 @@ select * from cuentas where fecha_creacion between '2025-03-31' and '2025-05-31'
 
 select numero_cuenta,saldo,fecha_creacion from cuentas where fecha_creacion between '2025-03-31' and '2025-05-31'
 
-update cuentas set saldo=10.00 where cedula_propietario like '17%'
-
 
