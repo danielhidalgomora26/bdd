@@ -51,7 +51,22 @@ create table ventas(
 	constraint id_venta_pk primary key (id_venta)
 )
 
-
+insert into ventas(id_venta,codigo_producto,fecha_venta,cantidad)
+values(1234,123,'22-06-2025',10);
+insert into ventas(id_venta,codigo_producto,fecha_venta,cantidad)
+values(1235,124,'22-06-2025',11);
+insert into ventas(id_venta,codigo_producto,fecha_venta,cantidad)
+values(1236,125,'22-06-2025',12);
+insert into ventas(id_venta,codigo_producto,fecha_venta,cantidad)
+values(1237,126,'22-06-2025',13);
+insert into ventas(id_venta,codigo_producto,fecha_venta,cantidad)
+values(1238,127,'22-06-2025',14);
+insert into ventas(id_venta,codigo_producto,fecha_venta,cantidad)
+values(1239,134,'22-06-2025',15);
+insert into ventas(id_venta,codigo_producto,fecha_venta,cantidad)
+values(1230,144,'22-06-2025',16);
+insert into ventas(id_venta,codigo_producto,fecha_venta,cantidad)
+values(1231,154,'22-06-2025',17);
 
 alter table ventas
 add constraint producto_ventas_fk
@@ -60,7 +75,7 @@ references productos(codigo)
 
 select pr.nombre,pr.stock,ve.cantidad,id_venta from productos pr, ventas ve
 where pr.codigo=ve.codigo_producto
-and nombre like '%m%' or descripcion is null
+and nombre like 'm%' 
 
 select pr.nombre,pr.stock from productos pr, ventas ve
 where pr.codigo=ve.codigo_producto
