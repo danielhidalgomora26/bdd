@@ -84,13 +84,7 @@ add constraint cientes_compras_fk
 foreign key (cedula)
 references clientes(cedula_cliente)
 
-select cl.nombre,cl.apellido from clientes cl, compras co
-where cl.cedula_cliente= co.cedula
-and cedula_cliente like '%7%'
 
-select cl.cedula_cliente,cl.nombre,cl.apellido,cl.edad from clientes cl, compras co
-where cl.cedula_cliente= co.cedula
-and cedula_cliente like '1004471432'
 
 
 

@@ -40,8 +40,6 @@ select * from videojuegos where descripcion is null
 
 delete from videojuegos where valoracion<7
 
-drop table plataformas
-
 create table plataformas(
 	id_plataformas int,
 	nombre_plataforma varchar(50) not null,
@@ -49,33 +47,7 @@ create table plataformas(
 	constraint id_plataformas_pk primary key (id_plataformas)
 )
 
-insert into plataformas(id_plataformas,nombre_plataforma,codigo_videojuego)
-values (129,'play',1236);
-insert into plataformas(id_plataformas,nombre_plataforma)
-values (128,'x-box');
-insert into plataformas(id_plataformas,nombre_plataforma)
-values (127,'play');
-insert into plataformas(id_plataformas,nombre_plataforma)
-values (126,'nintedo');
-insert into plataformas(id_plataformas,nombre_plataforma)
-values (125,'x-box');
-insert into plataformas(id_plataformas,nombre_plataforma)
-values (124,'play');
-
 alter table plataformas
 add constraint videojuegos_plataformas_fk
 foreign key (codigo_videojuego)
 references videojuegos(codigo)
-
-select vi.nombre, vi.descripcion, vi.valoracion, pl.nombre_plataforma from videojuegos vi, plataformas pl
-where vi.codigo = pl.codigo_videojuego
-and descripcion = 'Guerra' and valoracion > 7 or nombre like 'C%' and valoracion > 8 and nombre like 'D%%'
-
-select pl.id_plataformas,pl.nombre_plataforma
-from videojuegos vi, plataformas pl
-where vi.codigo = pl.codigo_videojuego
-and codigo = codigo_videojuego
-
-
-
-

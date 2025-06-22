@@ -10,8 +10,8 @@ create table estudiantes(
 	constraint estudiantes_pk primary key(cedula)
 )
 
-insert into estudiantes(cedula,nombre,apellido,email,fecha_nacimiento,codigo_profesor)
-values (1004421432,'Daniel','Hidalgo','danielhidalgomora@gmail.com','2007-03-30',123);
+insert into estudiantes(cedula,nombre,apellido,email,fecha_nacimiento)
+values (1004421432,'Daniel','Hidalgo','danielhidalgomora@gmail.com','2007-03-30');
 
 insert into estudiantes(cedula,nombre,apellido,email,fecha_nacimiento)
 values (1004421434,'Damian','Livisaca','Damian456@gmail.com','2009-04-20');
@@ -57,21 +57,3 @@ alter table estudiantes
 add constraint estudiantes_profesores_fk
 foreign key (codigo_profesor)
 references profesores(codigo)
-
-insert into profesores(codigo, nombre)
-values (123, 'Francisco');
-insert into profesores(codigo, nombre)
-values (124, 'Gabriel');
-insert into profesores(codigo, nombre)
-values (125, 'Juan');
-insert into profesores(codigo, nombre)
-values (126, 'Pepe');
-insert into profesores(codigo, nombre)
-values (127, 'Joaco');
-
-select pr.codigo,es.nombre,es.apellido from estudiantes es, profesores pr
-where es.codigo_profesor = pr.codigo
-and apellido like '%n%'
-
-select es.cedula,es.nombre,es.apellido from estudiantes es, profesores pr
-where codigo_profesor = 123

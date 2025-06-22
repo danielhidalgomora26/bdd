@@ -118,12 +118,5 @@ where
 pe.estado_civil_codigo=ec.codigo
 and nombre like 'D%'
 
-select pe.nombre,pe.apellido,pe.estatura,pe.fecha_nacimiento,pe.hora_nacimiento,pe.cantidad_ahorrada,pe.numero_hijos
-from personas pe,estado_civil ec
-where pe.estado_civil_codigo=ec.codigo
-and nombre ='Sean'
-
-
-
 
 

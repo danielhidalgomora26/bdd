@@ -57,17 +57,3 @@ alter table empleado
 add constraint empleado_registros_entrada_fk 
 foreign key (codigo_empleado)
 references registros_entrada(codigo_registro)
-
-select re.cedula_empleado, re.fecha, em.nombre
-from registros_entrada re, empleado em
-where re.cedula_empleado = em.cedula_empleado
-and 
-re.fecha between '2023-08-01' and '2023-08-31'
-or (re.cedula_empleado like '17%' and re.hora between '08:00' and '12:00')
-or (re.fecha between '2023-10-06' and '2023-10-20' and re.cedula_empleado like '08%' and re.hora between '09:00' and '13:00')
-
-select em.* 
-from empleado em, registros_entrada re
-where em.codigo_empleado = re.codigo_registro
-and re.cedula_empleado = '2201'
-

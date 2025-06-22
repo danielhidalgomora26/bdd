@@ -51,17 +51,9 @@ create table ventas(
 	constraint id_venta_pk primary key (id_venta)
 )
 
-
-
 alter table ventas
 add constraint producto_ventas_fk
 foreign key (codigo_producto)
 references productos(codigo)
 
-select pr.nombre,pr.stock,ve.cantidad,id_venta from productos pr, ventas ve
-where pr.codigo=ve.codigo_producto
-and nombre like '%m%' or descripcion is null
 
-select pr.nombre,pr.stock from productos pr, ventas ve
-where pr.codigo=ve.codigo_producto
-and codigo_producto=5   

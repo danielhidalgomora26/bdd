@@ -80,22 +80,8 @@ insert into banco(codigo_banco)
 values(120);
 insert into banco(codigo_banco)
 values(220);
-
 alter table transacciones
 add constraint transacciones_banco_fk
 foreign key (codigo)
 references banco(codigo_banco)
-
-select tra.codigo,tra.numero_cuenta,tra.monto,tra.tipo from transacciones tra, banco ba
-where tra.codigo=ba.codigo_banco
-and tipo='C' and numero_cuenta between '22001' and '22004'
-
-select tra.codigo,tra.numero_cuenta,tra.monto,tra.tipo,tra.fecha,tra.hora from transacciones tra, banco ba
-where tra.codigo=ba.codigo_banco
-and codigo_banco = 1
-
-
-
-
-
 

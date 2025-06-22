@@ -100,12 +100,5 @@ select * from usuario
 
 select * from cuentas
 
-select cu.numero_cuenta,us.nombre,us.apellido,cu.saldo from cuentas cu, usuario us
-where cu.cedula_propietario = us.cedula
-and saldo between money(100) and money(1000)
-
-select cu.numero_cuenta,cu.fecha_creacion,cu.saldo,us.cedula from cuentas cu, usuario us
-where cu.cedula_propietario = us.cedula
-and fecha_creacion between '2022-09-21' and '2023-09-21'
 
 
